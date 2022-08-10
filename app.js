@@ -1,11 +1,31 @@
 const express = require('express')
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose')
+const pageRoute = require('../smartEDU/routes/pageRoutes')
+const courseRoute = require('../smartEDU/routes/courseRoute')
+
+
 
 const app = express()
 
-
-app.get('/', (req,res)=>{
-  res.send('INDEX PAGE')
+//Connect DB
+mongoose.connect('mongodb://localhost/smartedu-db').then(()=> {
+  console.log('DB connected')
 })
+
+
+//Template Engine
+app.set('view engine', 'ejs')
+
+// Middlewares
+app.use(express.static('public'))
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+//Routes
+app.use('/', pageRoute)
+app.use('/courses', courseRoute)
+
 
 const port = 5000
 

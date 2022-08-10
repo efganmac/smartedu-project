@@ -117,7 +117,7 @@
 	  </div>
 	</div>
 
-    <!-- LOADER -->
+	<!-- LOADER -->
 	<div id="preloader">
 		<div class="loader-container">
 			<div class="progress-br float shadow">
@@ -141,9 +141,9 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-host">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-						<li class="nav-item active dropdown">
+						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Course </a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="course-grid-2.html">Course Grid 2 </a>
@@ -160,7 +160,7 @@
 						</li>
 						<li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
 						<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						<li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
                         <li><a class="hover-btn-new log" href="#" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
@@ -173,215 +173,55 @@
 	
 	<div class="all-title-box">
 		<div class="container text-center">
-			<h1>Course Grid 3<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+			<h1>Contact<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
 		</div>
 	</div>
 	
-    <div id="overviews" class="section wb">
+    <div id="contact" class="section wb">
         <div class="container">
-            <div class="section-title row text-center">
-                <div class="col-md-8 offset-md-2">
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
-                </div>
+            <div class="section-title text-center">
+                <h3>Need Help? Sure we are Online!</h3>
+                <p class="lead">Let us give you more details about the special offer website you want us. Please fill out the form below. <br>We have million of website owners who happy to work with us!</p>
             </div><!-- end title -->
 
-            <hr class="invis"> 
-
-            <div class="row"> 
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="course-item">
-						<div class="image-blog">
-							<img src="images/blog_1.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="#" title="">Engineering</a></h2>
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
-						</div>
-						<div class="course-meta-bot">
-							<ul>
-								<li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-								<li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-								<li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-							</ul>
-						</div>
-					</div>
+            <div class="row">
+                <div class="col-xl-6 col-md-12 col-sm-12">
+                    <div class="contact_form">
+                        <div id="message"></div>
+                        <form id="contactform" class="" action="contact.php" name="contactform" method="post">
+                            <div class="row row-fluid">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
+                                </div>
+                                <div class="text-center pd">
+                                    <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Get a Quote</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div><!-- end col -->
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="course-item">
-						<div class="image-blog">
-							<img src="images/blog_2.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="#" title="">Hotel Management</a></h2>
-							</div>
-							<div class="blog-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
-						</div>
-						<div class="course-meta-bot">
-							<ul>
-								<li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-								<li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-								<li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-							</ul>
-						</div>
+				<div class="col-xl-6 col-md-12 col-sm-12">
+					<div class="map-box">
+						<div id="custom-places" class="small-map"></div>
 					</div>
-                </div><!-- end col -->	
-				
-				<div class="col-lg-4 col-md-6 col-12">
-                    <div class="course-item">
-						<div class="image-blog">
-							<img src="images/blog_3.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="#" title="">Biotechnology</a></h2>
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
-						</div>
-						<div class="course-meta-bot">
-							<ul>
-								<li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-								<li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-								<li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-							</ul>
-						</div>
-					</div>
-                </div><!-- end col -->
-            </div><!-- end row -->			
-			
-			<hr class="hr3"> 
-			
-            <div class="row"> 
-				<div class="col-lg-4 col-md-6 col-12">
-                   <div class="course-item">
-						<div class="image-blog">
-							<img src="images/blog_4.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="#" title="">Medical Sciences</a></h2>
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
-						</div>
-						<div class="course-meta-bot">
-							<ul>
-								<li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-								<li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-								<li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-							</ul>
-						</div>
-					</div>
-                </div><!-- end col -->
-				
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="course-item">
-						<div class="image-blog">
-							<img src="images/blog_5.jpg" alt="" class="img-fluid">
-						</div>		
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="#" title="">Finance</a></h2>
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
-						</div>
-						<div class="course-meta-bot">
-							<ul>
-								<li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-								<li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-								<li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-							</ul>
-						</div>
-					</div>
-                </div><!-- end col -->
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="course-item">
-						<div class="image-blog">
-							<img src="images/blog_6.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="#" title="">Fashion Designing</a></h2>
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>	
-							<div class="course-rating">
-								4.5
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star"></i>	
-								<i class="fa fa-star-half"></i>								
-							</div>
-						</div>
-						<div class="course-meta-bot">
-							<ul>
-								<li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-								<li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-								<li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-							</ul>
-						</div>
-					</div>
-                </div><!-- end col -->
+				</div>
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
-
-    <div class="parallax section dbcolor">
+	
+	<div class="parallax section dbcolor">
         <div class="container">
             <div class="row logos">
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
@@ -475,6 +315,10 @@
 
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCKjLTXdq6Db3Xit_pW_GK4EXuPRtnod4o"></script>
+	<!-- Mapsed JavaScript -->
+	<script src="js/mapsed.js"></script>
+	<script src="js/01-custom-places-example.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
 
