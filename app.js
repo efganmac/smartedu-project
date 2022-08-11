@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const pageRoute = require('../smartEDU/routes/pageRoutes')
 const courseRoute = require('../smartEDU/routes/courseRoute')
+const categoryRoute = require('../smartEDU/routes/categoryRoute')
 
 
 
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 //Routes
 app.use('/', pageRoute)
 app.use('/courses', courseRoute)
-
+app.use('/categories', categoryRoute)
 
 const port = 5000
 
