@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const pageRoute = require('../smartEDU/routes/pageRoutes')
 const courseRoute = require('../smartEDU/routes/courseRoute')
 const categoryRoute = require('../smartEDU/routes/categoryRoute')
-
+const userRoute = require('../smartEDU/routes/userRoute')
 
 
 const app = express()
@@ -27,6 +27,10 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 app.use('/', pageRoute)
 app.use('/courses', courseRoute)
 app.use('/categories', categoryRoute)
+app.use('/users', userRoute)
+app.use('/registers', pageRoute)
+app.use('/contacts', pageRoute)
+app.use('/pricings', pageRoute)
 
 const port = 5000
 
