@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const MongoStore = require('connect-mongo');
+const session = require('express-session')
 const pageRoute = require('../smartEDU/routes/pageRoutes')
 const courseRoute = require('../smartEDU/routes/courseRoute')
 const categoryRoute = require('../smartEDU/routes/categoryRoute')
@@ -18,11 +20,30 @@ mongoose.connect('mongodb://localhost/smartedu-db').then(()=> {
 //Template Engine
 app.set('view engine', 'ejs')
 
+
+//Global Variable
+
+global.userIN = null
+
+
 // Middlewares
+
 app.use(express.static('public'))
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(session({
+  secret: 'my_cat',
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({ mongoUrl: 'mongodb://localhost/smartedu-db'})
+}))
 
+
+
+app.use('*', (req, res, next)=>{
+  userIN = req.session.userID
+  next()
+})
 //Routes
 app.use('/', pageRoute)
 app.use('/courses', courseRoute)
@@ -31,6 +52,7 @@ app.use('/users', userRoute)
 app.use('/registers', pageRoute)
 app.use('/contacts', pageRoute)
 app.use('/pricings', pageRoute)
+app.use('/blog', pageRoute)
 
 const port = 5000
 

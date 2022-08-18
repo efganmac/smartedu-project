@@ -1,4 +1,5 @@
 exports.getIndexPage = (req,res)=>{
+  console.log(req.session.userID)
   res.render('index',{
     page_name:'index'
   })
@@ -30,5 +31,10 @@ exports.getContactPage =  (req,res)=>{
 exports.getPricingPage =  (req,res)=>{
   res.render('pricing',{
     page_name: 'pricing'
+  })
+}
+exports.getBlogPage =  (req,res)=>{
+  res.render('blog',{
+    page_name: 'blog'
   })
 }
