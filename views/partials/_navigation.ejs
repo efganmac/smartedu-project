@@ -13,8 +13,10 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item <%= page_name === 'index' && 'active' %>"><a class="nav-link" href="/">Home</a></li>
           <li class="nav-item <%= page_name === 'about' && 'active' %>"><a class="nav-link" href="/about">About Us</a></li>
-          <% if(userIN) { %>
           <li class="nav-item  <%= page_name === 'courses' && 'active' %>"><a class="nav-link" href="/courses"> Course </a></li>
+          <% if(userIN) { %>
+          <li class="nav-item  <%= page_name === 'dashboard' && 'active' %>"><a class="nav-link" href="/users/dashboard"> Dashboard </a></li>
+          
           <% } %>
             
           
@@ -41,15 +43,8 @@
      
         <% if(userIN) { %>
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="hover-btn-new out" href="users/logout"><span>Log Out</span></a></li>
+            <li><a class="hover-btn-new out" href="/users/logout"><span>Log Out</span></a></li>
           </ul>
-          <script> Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'YOU ARE LOGGED IN',
-            showConfirmButton: false,
-            timer: 1500
-          })</script>
         <% } %>
 
         </ul>
