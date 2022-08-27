@@ -11,12 +11,11 @@ exports.createCourse = async (req, res) => {
       user: req.session.userID
     });
 
+    req.flash("success", `${course.name} has been created successfully`);
     res.status(201).redirect('/courses');
   } catch (error) {
-    res.status(400).json({
-      status: 'fail',
-      error,
-    });
+    req.flash("error", `Something happened!`);
+    res.status(400).redirect('/courses');
   }
 };
 
@@ -24,7 +23,7 @@ exports.getAllCourses = async (req, res) => {
   try {
 
     const categorySlug = req.query.categories;
-    const query = req.query.search
+    const query = req.query.search;
 
     const category = await Category.findOne({slug:categorySlug})
 
@@ -33,10 +32,7 @@ exports.getAllCourses = async (req, res) => {
     if(categorySlug) {
       filter = {category:category._id}
     }
-       
-    if(query){
-      filet = {name:query} 
-    }
+
     if(query) {
       filter = {name:query}
     }
@@ -52,7 +48,6 @@ exports.getAllCourses = async (req, res) => {
         {category: filter.category}
       ]
     }).sort('-createdAt').populate('user');
-
     const categories = await Category.find();
 
     res.status(200).render('courses', {
@@ -72,7 +67,6 @@ exports.getCourse = async (req, res) => {
   try {
     const user = await User.findById(req.session.userID);
     const course = await Course.findOne({slug: req.params.slug}).populate('user')
-
     const categories = await Category.find();
     res.status(200).render('course', {
       course,
@@ -110,6 +104,45 @@ exports.releaseCourse = async (req, res) => {
     await user.save();
 
     res.status(200).redirect('/users/dashboard');
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
+
+
+exports.deleteCourse = async (req, res) => {
+  try {    
+
+    const course = await Course.findOneAndRemove({slug:req.params.slug})
+
+    req.flash("error", `${course.name} has been removed successfully`);
+
+    res.status(200).redirect('/users/dashboard');
+
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
+
+
+exports.updateCourse = async (req, res) => {
+  try {    
+
+    const course = await Course.findOne({slug:req.params.slug});
+    course.name = req.body.name;
+    course.description = req.body.description;
+    course.category = req.body.category;
+
+    course.save();
+   
+    res.status(200).redirect('/users/dashboard');
+
   } catch (error) {
     res.status(400).json({
       status: 'fail',

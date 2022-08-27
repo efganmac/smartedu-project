@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo');
 const session = require('express-session')
+const flash = require('connect-flash');
+const methodOverride = require('method-override');
 const pageRoute = require('../smartEDU/routes/pageRoutes')
 const courseRoute = require('../smartEDU/routes/courseRoute')
 const categoryRoute = require('../smartEDU/routes/categoryRoute')
@@ -37,13 +39,21 @@ app.use(session({
   saveUninitialized: true,
   store: MongoStore.create({ mongoUrl: 'mongodb://localhost/smartedu-db'})
 }))
-
-
-
+app.use(flash());
+app.use((req, res, next)=> {
+  res.locals.flashMessages = req.flash();
+  next();
+})
 app.use('*', (req, res, next)=>{
   userIN = req.session.userID
   next()
 })
+
+app.use(
+  methodOverride('_method', {
+    methods: ['POST', 'GET'],
+  })
+);
 //Routes
 app.use('/', pageRoute)
 app.use('/courses', courseRoute)
